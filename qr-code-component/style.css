@@ -1,3 +1,13 @@
+:root{
+    --page-bg: hsl(212, 45%, 89%);
+    --card-bg: hsl(0, 0%, 100%);
+
+    --heading-color: hsl(218, 44%, 22%);
+    --text-color: hsl(220, 15%, 55%);
+
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
 *{
     margin: 0; 
     padding: 0; 
@@ -5,41 +15,39 @@
     font-family: 'Outfit', sans-serif;
 }
 body {
-    background-color: hsl(212, 45%, 89%);
+    background-color: var(--page-bg);
     display: flex; 
     justify-content: center; 
     align-items: center; 
     height: 100vh;
 }
 .card {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 15px; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 300px; 
-    padding: 15px; 
+    background-color: var(--card-bg);
+    border-radius: calc(15rem/16); 
+    box-shadow: var(--card-shadow);
+    width: 20rem;
+    padding: calc(15rem/16); 
     text-align: center;
 }
 
 .qr-image {
-    width: 100%; 
-    border-radius: 10px;
-}
-.qr-image img {
-    width: 100%; 
-    border-radius: 5px;
+    width: 100%;
+    border-radius: calc(7.5rem/16);
 }
 
 .card-content {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 0.625rem 0;
+    padding: 0.625rem;
 }
 .card-content h1 {
-    font-size: 22px; 
-    color: hsl(218, 44%, 22%);
-    margin-bottom: 10px;
+    font-size: calc(22rem/16); 
+    color: var(--heading-color);
 }
 .card-content p {
-    font-size: 14px; 
-    color: hsl(220, 15%, 55%);
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    margin-block-start: 1.25rem;
+    font-size: calc(15rem/16); 
+    color: var(--text-color);
     line-height: 1.5;
 }
