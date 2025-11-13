@@ -26,7 +26,10 @@ body {
     border-radius: calc(15rem/16); 
     box-shadow: var(--card-shadow);
     width: 20rem;
-    padding: calc(15rem/16); 
+    padding: calc(15rem/16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
 }
 
