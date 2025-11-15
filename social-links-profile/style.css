@@ -1,0 +1,119 @@
+:root {
+  --color-dark-bg: hsl(0, 0%, 8%);
+  --color-card-bg: hsl(0, 0%, 12%);
+  --color-text-primary: hsl(0, 0%, 100%);
+  --color-text-secondary: #c0c0c0;
+  --color-accent: hsl(75, 94%, 57%);
+  --color-button-bg: hsl(0, 0%, 20%);
+  --color-button-hover: hsl(0, 0%, 33%);
+
+  --spacing-xms: 0.75rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+
+  --text-preset-1: 600 1.5rem / 1.5 "Inter", sans-serif;
+  --text-preset-2-bold: 600 calc(14rem / 16) / 1.5 "Inter", sans-serif;
+  --text-preset-2: 400 calc(14rem / 16) / 1.5 "Inter", sans-serif;
+
+  --border-radius: 0.75rem;
+  --card-width: min(87.2%, 23.4375rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: var(--card-width);
+  background-color: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  padding: min(5vw, var(--spacing-lg));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.user-image {
+  display: flex;
+  justify-content: center;
+}
+
+.user-image img {
+  width: clamp(3.5rem, 20vw, 5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  text-align: center;
+  width: 100%;
+}
+
+.user-name {
+  font: var(--text-preset-1);
+}
+
+.user-location {
+  font: var(--text-preset-2-bold);
+  color: var(--color-accent);
+}
+
+.profile-copy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.profile-bio {
+  text-align: center;
+  font: var(--text-preset-2);
+  color: var(--color-text-primary);
+}
+
+.profile-links {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-xms));
+}
+
+.profile-links li {
+  background-color: var(--color-button-bg);
+  color: var(--color-text-primary);
+  padding: var(--spacing-xms);
+  border-radius: calc(var(--border-radius) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--text-preset-2-bold);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-links li:hover {
+  background-color: var(--color-accent);
+  color: var(--color-dark-bg);
+}
+
