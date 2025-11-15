@@ -43,7 +43,7 @@ body {
   width: var(--card-width);
   background-color: var(--color-card-bg);
   border-radius: var(--border-radius);
-  padding: min(5vw, var(--spacing-lg));
+  padding: max(3vw, var(--spacing-lg));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +96,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--spacing-xms));
+  gap: calc(var(--spacing-xms) * 1.5);
 }
 
 .profile-links li {
