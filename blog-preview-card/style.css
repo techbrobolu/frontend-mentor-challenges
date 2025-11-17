@@ -47,7 +47,7 @@ body {
 .blog-image {
   width: 100%;
   height: 12.5rem;
-  border-radius: calc(1.25rem - var(--spacing-300));
+  border-radius: calc(1.25rem / 2);
   background: no-repeat center/cover url("./assets/blog-image.png");
 }
 .blog-content {
@@ -71,7 +71,7 @@ body {
   font: var(--text-preset-1);
 }
 .blog-title:hover {
-    color: var(--yellow);
+  color: var(--yellow);
 }
 .blog-desc {
   font: var(--text-preset-2);
