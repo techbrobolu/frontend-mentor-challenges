@@ -53,6 +53,23 @@ hr {
   width: 100%;
 }
 
+ul,
+ol {
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--list-gap);
+}
+
+li {
+  padding-left: 1rem;
+}
+
+li::marker {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
 .recipe {
   background: var(--white);
   width: var(--recipe-width);
@@ -90,38 +107,18 @@ hr {
 
 .recipe-desc {
   color: var(--stone-600);
-  font-size: var(--lead-size);
-  line-height: 1.5;
-  max-width: 100%;
 }
 
 .recipe-time {
   background: var(--rose-50);
   border-radius: 0.75rem;
-  padding: 2rem;
+  padding: 1.75rem;
 }
 
 .recipe-time h3 {
   color: var(--rose-800);
   font: var(--text-preset-3);
   margin-bottom: 0.5rem;
-}
-
-ul,
-ol {
-  margin-left: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--list-gap);
-}
-
-li {
-  padding-left: 1rem;
-}
-
-li::marker {
-  color: var(--brown-800);
-  font-weight: 700;
 }
 
 .recipe-instructions li {
@@ -135,7 +132,7 @@ li::marker {
 .nutrition-table {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .nutrient-row {
