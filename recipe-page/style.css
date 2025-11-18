@@ -59,7 +59,7 @@ hr {
   padding: var(--card-padding);
   border-radius: var(--card-radius);
   overflow: hidden;
-  margin-inline: auto;
+  margin: 6.6rem auto;
 }
 
 .recipe-image {
