@@ -24,9 +24,16 @@
   </head>
   <body>
     <main class="card">
-      <div class="card-image">
-        <img src="images/image-product-desktop.jpg" alt="Perfume Bottle" />
-      </div>
+      <picture class="card-image">
+        <source
+          media="(min-width: 600px)"
+          srcset="images/image-product-desktop.jpg"
+        />
+        <img
+          src="images/image-product-mobile.jpg"
+          alt="Gabrielle Essence Eau De Parfum"
+        />
+      </picture>
       <div class="card-content">
         <p class="card-tag">Perfume</p>
         <h1>Gabrielle Essence Eau De Parfum</h1>
