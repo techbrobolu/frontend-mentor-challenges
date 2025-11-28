@@ -1,8 +1,139 @@
 :root {
-    --green-500: hsl(158, 36%, 37%);
-    --green-700: hsl(158, 42%, 18%);
-    --black: hsl(212, 21%, 14%);
-    --grey: hsl(30, 38%, 92%);
-    --cream: hsl(30, 38%, 92%);
-    --white: hsl(0, 0%, 100%);
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --card-radius: 0.625rem;
+
+  --p-size: 0.875rem;
+  --text-preset-1: 700 2em/1 "Fraunces", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-align: start;
+}
+
+body {
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--grey);
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  max-width: 580px;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.card-image {
+  flex: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  border-start-start-radius: var(--card-radius);
+  border-end-start-radius: var(--card-radius);
+  object-fit: cover;
+}
+
+.card-content {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-copy{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 1.5rem;
+}
+
+.card-content .card-tag {
+  letter-spacing: 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+  /* margin-bottom: 1rem; */
+  text-transform: uppercase;
+}
+
+.card-content h1 {
+  /* font-size: 1.75rem; */
+  font: var(--text-preset-1);
+  color: var(--black);
+}
+
+.card-description {
+  font-size: var(--p-size);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.card-purchase {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-prices {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.card-price-current {
+  font: var(--text-preset-1);
+  color: var(--green-500);
+}
+
+.card-price-original{
+    text-decoration: line-through;
+    font-size: var(--p-size);
+}
+
+.cart-button {
+  background: var(--green-500);
+  width: 100%;
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  .card-image img {
+    width: 100%;
+    border-start-end-radius: var(--card-radius);
+    border-end-start-radius: 0;
+  }
 }
