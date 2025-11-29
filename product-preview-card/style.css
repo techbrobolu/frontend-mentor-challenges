@@ -63,7 +63,7 @@ body {
 .card-copy{
     display: flex;
     flex-direction: column;
-    
+
     gap: 1.5rem;
 }
 
@@ -129,11 +129,16 @@ body {
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
-    max-width: 400px;
+    max-width: 90%;
   }
   .card-image img {
     width: 100%;
     border-start-end-radius: var(--card-radius);
     border-end-start-radius: 0;
+  }
+
+  .card-content {
+    width: 100%;
+    gap: 2rem;
   }
 }
