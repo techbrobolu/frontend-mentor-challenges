@@ -46,15 +46,16 @@ body {
 }
 
 .card-image img {
+  display: block;
   width: 100%;
-  height: 100%;
   border-start-start-radius: var(--card-radius);
   border-end-start-radius: var(--card-radius);
   object-fit: cover;
 }
 
 .card-content {
-  width: 50%;
+  /* width: 50%; */
+  flex: 1;
   padding: 2rem;
   display: flex;
   flex-direction: column;
