@@ -6,11 +6,12 @@
   --cream: hsl(30, 38%, 92%);
   --white: hsl(0, 0%, 100%);
 
-  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.05);
   --card-radius: 0.625rem;
 
-  --p-size: 0.875rem;
   --text-preset-1: 700 2em/1 "Fraunces", sans-serif;
+  --text-preset-2: 700 0.875em/1.5 "Montserrat", sans-serif;
+  --text-preset-3: 500 0.875em/1.5 "Montserrat", sans-serif;
 }
 
 * {
@@ -57,7 +58,7 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
 }
 
 .card-copy{
@@ -71,20 +72,16 @@ body {
   letter-spacing: 0.4rem;
   font-size: 0.625rem;
   font-weight: 500;
-  /* margin-bottom: 1rem; */
   text-transform: uppercase;
 }
 
 .card-content h1 {
-  /* font-size: 1.75rem; */
   font: var(--text-preset-1);
   color: var(--black);
 }
 
 .card-description {
-  font-size: var(--p-size);
-  line-height: 1.5;
-  font-weight: 500;
+  font: var(--text-preset-3);
 }
 
 .card-purchase {
@@ -118,12 +115,16 @@ body {
   border: none;
   padding: 1rem;
   border-radius: 0.5rem;
-  font-weight: 700;
+  font: var(--text-preset-2);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.cart-button:hover{
+  background: var(--green-700);
 }
 
 @media (max-width: 600px) {
@@ -139,6 +140,5 @@ body {
 
   .card-content {
     width: 100%;
-    gap: 2rem;
   }
 }
