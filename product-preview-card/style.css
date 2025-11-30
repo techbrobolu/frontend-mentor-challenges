@@ -61,11 +61,10 @@ body {
   gap: 2rem;
 }
 
-.card-copy{
-    display: flex;
-    flex-direction: column;
-
-    gap: 1.5rem;
+.card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .card-content .card-tag {
@@ -103,9 +102,9 @@ body {
   color: var(--green-500);
 }
 
-.card-price-original{
-    text-decoration: line-through;
-    font-size: var(--p-size);
+.card-price-original {
+  text-decoration: line-through;
+  font-size: var(--text-preset-3)
 }
 
 .cart-button {
@@ -123,7 +122,7 @@ body {
   gap: 1rem;
 }
 
-.cart-button:hover{
+.cart-button:hover {
   background: var(--green-700);
 }
 
