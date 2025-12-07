@@ -1,12 +1,145 @@
-:root{
-    --red: hsl(0, 78%, 62%);
-    --cyan: hsl(180, 62%, 55%);
-    --orange: hsl(34, 97%, 64%);
-    --blue: hsl(212, 86%, 64%);
-    
-    --grey-500: hsl(234,12%, 34%);
-    --grey-400: hsl(212, 6%, 44%);
-    --white: hsl(0, 0%, 100%);
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
 
-    --text-preset-2: 200 calc(15rem/16)/1.5 'Poppins', sans-serif;
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+
+  --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  --text-preset-1: 200 2rem / 1 "Poppins", sans-serif;
+  --text-preset-2: 600 2rem / 1.2 "Poppins", sans-serif;
+  --text-preset-3: 400 1.5rem / 1.5 "Poppins", sans-serif;
+  --text-preset-4: 400 calc(15rem/16) / 1.5 "Poppins", sans-serif;
+
+  --card-radius: 0.5rem;
+  --card-accent-radius: calc(var(--card-radius) - var(--arc-dis));
+  --arc-dis: calc(var(--card-radius) - var(--card-radius) / sqrt(2));
+  --card-accent-width: calc(100% - 2 * var(--arc-dis));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: start;
+}
+
+body {
+  background: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--grey-500);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: min(95%, 35rem);
+}
+
+header h1 {
+  font: var(--text-preset-1);
+}
+
+header h2{
+  font: var(--text-preset-2);
+}
+
+header p{
+  text-align: center;
+  font: var(--text-preset-4);
+}
+
+main {
+  width: min(95%, 75rem);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.middle-grid {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--card-radius);
+}
+
+.card-1::before {
+  content: "";
+  height: calc(var(--card-radius) / 2);
+  width: 100%;
+  background: var(--cyan);
+}
+
+.card-2::before {
+  content: "";
+  height: calc(var(--card-radius) / 2);
+  width: 100%;
+  background: var(--red);
+}
+
+.card-3::before {
+  content: "";
+  height: calc(var(--card-radius) / 2);
+  width: 100%;
+  background: var(--orange);
+}
+
+.card-4::before {
+  content: "";
+  height: calc(var(--card-radius) / 2);
+  width: 100%;
+  background: var(--blue);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  background: var(--white);
+  gap: 1.5rem;
+}
+
+.card-content .card-copy{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.card-copy p{
+  font: var(--text-preset-4);
+  color: var(--grey-400);
+}
+
+.card-content img{
+  align-self: flex-end;
+  margin-bottom: 1rem;
 }
