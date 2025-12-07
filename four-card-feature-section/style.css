@@ -51,10 +51,12 @@ header {
 }
 
 header h1 {
+  text-align: center;
   font: var(--text-preset-1);
 }
 
 header h2{
+  text-align: center;
   font: var(--text-preset-2);
 }
 
@@ -152,5 +154,23 @@ main {
 
   main{
     width: min(95%, 35rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  header{
+    width: min(90%, 20rem);
+  }
+
+  header h1, header h2{
+    font-size: 1.5rem;
+  }
+
+  main{
+    width: min(90%, 22rem);
   }
 }
