@@ -32,6 +32,7 @@
 body {
   background: var(--white);
   min-height: 100vh;
+  margin-block: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,4 +143,14 @@ main {
 .card-content img{
   align-self: flex-end;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  main{
+    width: min(95%, 35rem);
+  }
 }
