@@ -17,9 +17,11 @@
   --card-padding: clamp(0rem, 4vw - 1rem, 2.25rem);
   --content-padding: calc(2.5rem - 2.5vw);
 
-  --text-preset-1: 400 2.25rem/1 "Young Serif", serif;
-  --text-preset-3: 700 1.25rem/1.5 "Outfit", sans-serif;
-  --text-preset-4: 400 1rem/1.5 "Outfit", sans-serif;
+  --ff-secondary: "Young Serif", serif;
+  --ff-primary: "Outfit", sans-serif;
+  --text-preset-1: 400 2.25rem/1 var(--ff-secondary);
+  --text-preset-3: 700 1.25rem/1.5 var(--ff-primary);
+  --text-preset-4: 400 1rem/1.5 var(--ff-primary);
 }
 
 * {
@@ -63,11 +65,11 @@ ol {
 
 li {
   padding-left: 1rem;
-}
 
-li::marker {
-  color: var(--brown-800);
-  font-weight: 700;
+  ::marker {
+    color: var(--brown-800);
+    font-weight: 700;
+  }
 }
 
 .recipe {
@@ -81,17 +83,17 @@ li::marker {
 
 .recipe-image {
   width: 100%;
-}
 
-.recipe-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--image-radius);
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--image-radius);
+  }
 }
 
 .recipe-content {
-  margin-top: clamp(0rem, 4vw - 1rem, 2rem);
+  margin-block-start: clamp(0rem, 4vw - 1rem, 2rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +104,7 @@ li::marker {
 .recipe-title {
   color: var(--stone-900);
   font: var(--text-preset-1);
-  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 
 .recipe-desc {
@@ -113,41 +115,43 @@ li::marker {
   background: var(--rose-50);
   border-radius: 0.75rem;
   padding: 1.75rem;
-}
 
-.recipe-time h3 {
-  color: var(--rose-800);
-  font: var(--text-preset-3);
-  margin-bottom: 0.5rem;
+  h3 {
+    color: var(--rose-800);
+    font: var(--text-preset-3);
+    margin-block-end: 0.5rem;
+  }
 }
 
 .recipe-instructions li {
   text-align: left;
 }
 
-.recipe-nutrition .nutrition-desc {
-  margin-bottom: 1rem;
-}
+.recipe-nutrition {
+  & .nutrition-desc {
+    margin-block-end: 1rem;
+  }
 
-.nutrition-table {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
+  & .nutrition-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
-.nutrient-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0.5rem 0;
-  margin-inline: 2rem;
-  align-items: center;
-}
+    & .nutrient-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0.5rem 0;
+      margin-inline: 2rem;
+      align-items: center;
 
-.nutrient {
-  align-self: flex-start;
-}
+      & .nutrient {
+        align-self: flex-start;
+      }
 
-.energy {
-  color: var(--brown-800);
-  font-weight: 400;
+      & .energy {
+        color: var(--brown-800);
+        font-weight: 400;
+      }
+    }
+  }
 }
