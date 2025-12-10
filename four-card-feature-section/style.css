@@ -12,10 +12,11 @@
   --box-shadow: rgba(0, 0, 0, 0.1) -5px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 10px 10px 15px -3px;
 
-  --text-preset-1: 200 2rem / 1 "Poppins", sans-serif;
-  --text-preset-2: 600 2rem / 1.2 "Poppins", sans-serif;
-  --text-preset-3: 400 1.5rem / 1.5 "Poppins", sans-serif;
-  --text-preset-4: 400 calc(15rem / 16) / 1.5 "Poppins", sans-serif;
+  --ff: "Poppins", sans-serif;
+  --text-preset-1: 200 2rem / 1 var(--ff);
+  --text-preset-2: 600 2rem / 1.2 var(--ff);
+  --text-preset-3: 400 1.5rem / 1.5 var(--ff);
+  --text-preset-4: 400 calc(15rem / 16) / 1.5 var(--ff);
 
   --card-radius: 0.5rem;
   --card-accent-radius: calc(var(--card-radius) - var(--arc-dis));
@@ -39,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--ff);
   color: var(--grey-500);
 }
 
@@ -49,21 +50,21 @@ header {
   align-items: center;
   gap: 0.75rem;
   width: min(95%, 32rem);
-}
 
-header h1 {
-  text-align: center;
-  font: var(--text-preset-1);
-}
+  &h1 {
+    text-align: center;
+    font: var(--text-preset-1);
+  }
 
-header h2 {
-  text-align: center;
-  font: var(--text-preset-2);
-}
+  &h2 {
+    text-align: center;
+    font: var(--text-preset-2);
+  }
 
-header p {
-  text-align: center;
-  font: var(--text-preset-4);
+  &p {
+    text-align: center;
+    font: var(--text-preset-4);
+  }
 }
 
 main {
@@ -131,22 +132,22 @@ main {
   width: 100%;
   background: var(--white);
   gap: 1.5rem;
-}
 
-.card-content .card-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
+  & .card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 
-.card-copy p {
-  font: var(--text-preset-4);
-  color: var(--grey-400);
-}
+    & p {
+      font: var(--text-preset-4);
+      color: var(--grey-400);
+    }
+  }
 
-.card-content img {
-  align-self: flex-end;
-  margin-bottom: 1rem;
+  & p {
+    align-self: flex-end;
+    margin-block-end: 1rem;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
@@ -166,11 +167,11 @@ main {
 
   header {
     width: min(90%, 20rem);
-  }
 
-  header h1,
-  header h2 {
-    font-size: 1.5rem;
+    & h1,
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 
   main {
