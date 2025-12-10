@@ -11,9 +11,10 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
 
-  --text-preset-1: 600 1.5rem / 1.5 "Inter", sans-serif;
-  --text-preset-2-bold: 600 calc(14rem / 16) / 1.5 "Inter", sans-serif;
-  --text-preset-2: 400 calc(14rem / 16) / 1.5 "Inter", sans-serif;
+  --ff: "Inter", sans-serif;
+  --text-preset-1: 600 1.5rem / 1.5 var(--ff);
+  --text-preset-2-p-links: 600 calc(14rem / 16) / 1.5 var(--ff);
+  --text-preset-2: 400 calc(14rem / 16) / 1.5 var(--ff);
 
   --border-radius: 0.75rem;
   --card-width: min(87.2%, 23.4375rem);
@@ -30,7 +31,6 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
   background-color: var(--color-dark-bg);
   color: var(--color-text-primary);
   display: flex;
@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -58,27 +58,27 @@ a{
 .user-image {
   display: flex;
   justify-content: center;
-}
 
-.user-image img {
-  width: clamp(3.5rem, 20vw, 5rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
+  & img {
+    width: clamp(3.5rem, 20vw, 5rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .user-details {
   text-align: center;
   width: 100%;
-}
 
-.user-name {
-  font: var(--text-preset-1);
-}
+  & .user-name {
+    font: var(--text-preset-1);
+  }
 
-.user-location {
-  font: var(--text-preset-2-bold);
-  color: var(--color-accent);
+  & .user-location {
+    font: var(--text-preset-2-bold);
+    color: var(--color-accent);
+  }
 }
 
 .profile-copy {
@@ -112,13 +112,12 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  font: var(--text-preset-2-bold);
+  font: var(--text-preset-2-p-links);
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.profile-links li:hover {
-  background-color: var(--color-accent);
-  color: var(--color-dark-bg);
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-dark-bg);
+  }
 }
-
