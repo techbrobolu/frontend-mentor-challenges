@@ -1,59 +1,58 @@
-:root{
-    --page-bg: hsl(212, 45%, 89%);
-    --card-bg: hsl(0, 0%, 100%);
+:root {
+  --page-bg: hsl(212, 45%, 89%);
+  --card-bg: hsl(0, 0%, 100%);
 
-    --heading-color: hsl(218, 44%, 22%);
-    --text-color: hsl(220, 15%, 55%);
+  --heading-color: hsl(218, 44%, 22%);
+  --text-color: hsl(220, 15%, 55%);
 
-    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  --ff: "Outfit", sans-serif;
+  --text-preset-1: 700 calc(22rem / 16) / 1.25 var(--ff);
+  --text-preset-p: 400 calc(15rem / 16) / 1.5 var(--ff);
 }
 
-*{
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    font-family: 'Outfit', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff);
 }
 body {
-    background-color: var(--page-bg);
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh;
+  background-color: var(--page-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 .card {
-    background-color: var(--card-bg);
-    border-radius: 1.25rem; 
-    box-shadow: var(--card-shadow);
-    height: 31.25rem;
-    width: 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  height: 31.25rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .qr-image {
-    /* height: calc(100% - 2rem); */
-    width: calc(100% - 2rem);
-    border-radius: 0.625rem;
+  width: calc(100% - 2rem);
+  border-radius: 0.625rem;
 }
 
 .card-content {
-    margin-block: 0.625rem;
-    padding: 0.625rem;
-    text-align: center;
-}
-.card-content h1 {
-    font-size: calc(22rem/16); 
+  margin-block: 0.625rem;
+  padding: 0.625rem;
+  text-align: center;
+
+  & h1 {
+    font: var(--text-preset-1);
     color: var(--heading-color);
-    line-height: 1.25;
-}
-.card-content p {
-    writing-mode: horizontal-tb;
-    direction: ltr;
+  }
+  & p {
     margin-block-start: 1.25rem;
-    font-size: calc(15rem/16); 
-    color: var(--text-color);
-    line-height: 1.5;
+    font: var(--text-preset-p);
+  }
 }
