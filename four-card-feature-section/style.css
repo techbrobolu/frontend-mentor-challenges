@@ -144,7 +144,7 @@ main {
     }
   }
 
-  & p {
+  & img {
     align-self: flex-end;
     margin-block-end: 1rem;
   }
