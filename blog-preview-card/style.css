@@ -8,20 +8,24 @@
   --spacing-150: 0.75rem;
   --spacing-50: 0.25rem;
 
-  --text-preset-1: 800 min(5.5vw, 1.5rem) / 1.5 "Figtree", sans-serif;
-  --text-preset-2: 500 min(3.75vw, 1rem) / 1.5 "Figtree", sans-serif;
-  --text-preset-3: 500 min(3.2vw, 0.85rem) / 1.5 "Figtree", sans-serif;
-  --text-preset-3-bold: 800 min(3.2vw, 0.85rem) / 1.5 "Figtree", sans-serif;
+  --card-radius: 1.25rem;
+
+  --ff: "Figtree", sans-serif;
+  --text-preset-1: 800 min(5.5vw, 1.5rem) / 1.5 var(--ff);
+  --text-preset-2: 500 min(3.75vw, 1rem) / 1.5 var(--ff);
+  --text-preset-3: 500 min(3.2vw, 0.85rem) / 1.5 var(--ff);
+  --text-preset-3-bold: 800 min(3.2vw, 0.85rem) / 1.5 var(--ff);
 
   --card-shadow: 8px 8px rgba(0, 0, 0, 1);
   --card-border: 1px solid rgba(0, 0, 0, 1);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Figtree", sans-serif;
 }
+
 body {
   background-color: var(--yellow);
   color: var(--gray-900);
@@ -30,6 +34,7 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
 .blog-card {
   display: flex;
   flex-direction: column;
@@ -37,19 +42,21 @@ body {
   align-items: center;
   background-color: var(--white);
   border: var(--card-border);
-  border-radius: 1.25rem;
+  border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
   height: fit-content;
   width: min(87.2%, 384px);
   padding: var(--spacing-300);
   gap: var(--spacing-300);
 }
+
 .blog-image {
   width: 100%;
   height: 12.5rem;
-  border-radius: calc(1.25rem / 2);
+  border-radius: calc(var(--card-radius) / 2);
   background: no-repeat center/cover url("./assets/blog-image.png");
 }
+
 .blog-content {
   display: flex;
   flex-direction: column;
@@ -58,25 +65,32 @@ body {
   gap: var(--spacing-150);
   width: 100%;
 }
+
 .blog-category {
   font: var(--text-preset-3-bold);
   background-color: var(--yellow);
-  padding: var(--spacing-50) var(--spacing-150);
+  padding-block: var(--spacing-50);
+  padding-inline: var(--spacing-150);
   border-radius: var(--spacing-50);
 }
+
 .publish-date {
   font: var(--text-preset-3);
 }
+
 .blog-title {
   font: var(--text-preset-1);
+
+  &:hover {
+    color: var(--yellow);
+  }
 }
-.blog-title:hover {
-  color: var(--yellow);
-}
+
 .blog-desc {
   font: var(--text-preset-2);
   color: var(--gray-500);
 }
+
 .blog-author {
   display: flex;
   justify-content: flex-start;
@@ -84,6 +98,7 @@ body {
   gap: var(--spacing-150);
   width: 100%;
 }
+
 .author-name {
   font: var(--text-preset-3-bold);
 }
