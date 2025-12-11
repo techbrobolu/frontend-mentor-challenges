@@ -17,6 +17,8 @@
 
   --row-gap: 1.5rem;
   --column-gap: 2rem;
+
+  --testimonials-width: 70rem;
   --testimonial-padding: 2rem;
   --testimonial-border-radius: 0.625rem;
   --user-pic-height: 2rem;
@@ -46,7 +48,7 @@ body {
 main.testimonials {
   margin-block: 4rem;
   margin-inline: 2rem;
-  max-width: 70rem;
+  max-width: var(--testimonials-width);
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-areas: "one" "two" "three" "four" "five";
