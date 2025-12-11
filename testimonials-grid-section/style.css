@@ -48,12 +48,11 @@ main.testimonials {
   margin-inline: 2rem;
   max-width: 70rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
-  row-gap: var(--row-gap);
+  grid-auto-columns: 1fr;
+  grid-template-areas: "one" "two" "three" "four" "five";
   column-gap: var(--column-gap);
+  row-gap: var(--row-gap);
   align-items: stretch;
-  height: max-content;
 
   & .testimonial {
     padding: var(--testimonial-padding);
@@ -103,15 +102,6 @@ main.testimonials {
       font: var(--text-testimonial-p);
     }
   }
-
-  & :nth-child(1),
-  :nth-child(4) {
-    grid-column: span 2;
-  }
-  & :nth-child(5) {
-    grid-column: 4/5;
-    grid-row: 1 / span 2;
-  }
 }
 
 .testimonial-1 {
@@ -120,6 +110,7 @@ main.testimonials {
   background-repeat: no-repeat;
   background-position: top 0 right 4rem;
   color: var(--purple-50);
+  grid-area: one;
 
   & .user-pic img {
     border: 2px solid var(--purple-300);
@@ -129,6 +120,7 @@ main.testimonials {
 .testimonial-2 {
   background-color: var(--grey-500);
   color: var(--white);
+  grid-area: two;
 
   & .user-title {
     color: var(--grey-200);
@@ -142,11 +134,13 @@ main.testimonials {
 .testimonial-3 {
   background-color: var(--white);
   color: var(--grey-500);
+  grid-area: three;
 }
 
 .testimonial-4 {
   background-color: var(--dark-blue);
   color: var(--grey-200);
+  grid-area: four;
 
   & .user-pic img {
     border: 2px solid var(--purple-500);
@@ -156,4 +150,25 @@ main.testimonials {
 .testimonial-5 {
   background-color: var(--white);
   color: var(--grey-500);
+  grid-area: five;
+}
+
+@media (min-width: 1000px) {
+  main.testimonials {
+    grid-template-areas:
+      "one one two five"
+      "three four four five"
+    ;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 1000px) {
+  main.testimonials {
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four four"
+      "five five"
+    ;
+  }
 }
