@@ -73,16 +73,10 @@ main {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "one" "two" "three" "four";
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-}
-
-.middle-grid {
-  display: grid;
-  grid-template-rows: repeat(2, auto);
-  gap: 1.75rem;
 }
 
 .card {
@@ -95,6 +89,19 @@ main {
   background: var(--white);
   box-shadow: var(--box-shadow);
   border-radius: var(--card-radius);
+
+  &.card-1 {
+    grid-area: one;
+  }
+  &.card-2 {
+    grid-area: two;
+  }
+  &.card-3 {
+    grid-area: three;
+  }
+  &.card-4 {
+    grid-area: four;
+  }
 }
 
 .card-1::before {
@@ -150,21 +157,15 @@ main {
   }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 1000px) {
   .cards-container {
-    grid-template-columns: 1fr;
-  }
-
-  main {
-    width: min(95%, 35rem);
+    grid-template-areas:
+      "one two three"
+      "one four three";
   }
 }
 
 @media (max-width: 600px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-  }
-
   header {
     width: min(90%, 20rem);
 
