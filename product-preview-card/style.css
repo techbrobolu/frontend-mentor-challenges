@@ -8,17 +8,20 @@
 
   --card-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.05);
   --card-radius: 0.625rem;
+  --card-width: calc(580rem/16);
 
-  --text-preset-1: 700 2em/1 "Fraunces", sans-serif;
-  --text-preset-2: 700 0.875em/1.5 "Montserrat", sans-serif;
-  --text-preset-3: 500 0.875em/1.5 "Montserrat", sans-serif;
+  --ff-p: "Montserrat", sans-serif;
+  --ff-sec: "Fraunces", serif;
+  --text-preset-1: 700 2em/1 var(--ff-sec);
+  --text-card-button: 700 0.875em/1.5 var(--ff-p);
+  --text-card-desc: 500 0.875em/1.5 var(--ff-p);
+  --text-card-tag: 500 0.625em/1.5 var(--ff-p);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
   text-align: start;
 }
 
@@ -35,7 +38,7 @@ body {
   background-color: var(--white);
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
-  max-width: 580px;
+  max-width: var(--card-width);
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -54,7 +57,6 @@ body {
 }
 
 .card-content {
-  /* width: 50%; */
   flex: 1;
   padding: 2rem;
   display: flex;
@@ -70,8 +72,6 @@ body {
 
 .card-content .card-tag {
   letter-spacing: 0.4rem;
-  font-size: 0.625rem;
-  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .card-description {
-  font: var(--text-preset-3);
+  font: var(--text-card-desc);
 }
 
 .card-purchase {
@@ -105,7 +105,7 @@ body {
 
 .card-price-original {
   text-decoration: line-through;
-  font-size: var(--text-preset-3)
+  font-size: var(--text-card-desc);
 }
 
 .cart-button {
@@ -115,16 +115,16 @@ body {
   border: none;
   padding: 1rem;
   border-radius: 0.5rem;
-  font: var(--text-preset-2);
+  font: var(--text-card-button);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-}
 
-.cart-button:hover {
-  background: var(--green-700);
+  &:hover {
+    background: var(--green-700);
+  }
 }
 
 @media (max-width: 600px) {
