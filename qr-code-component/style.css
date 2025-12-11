@@ -6,6 +6,11 @@
   --text-color: hsl(220, 15%, 55%);
 
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --card-height: 31.25rem;
+  --card-width: 20rem;
+  --card-radius: 0.625rem;
+
+  --qr-width: calc(100% - 2rem);
 
   --ff: "Outfit", sans-serif;
   --text-preset-1: 700 calc(22rem / 16) / 1.25 var(--ff);
@@ -27,10 +32,10 @@ body {
 }
 .card {
   background-color: var(--card-bg);
-  border-radius: 1.25rem;
+  border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
-  height: 31.25rem;
-  width: 20rem;
+  height: var(--card-height);
+  width: var(--card-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,8 +43,8 @@ body {
 }
 
 .qr-image {
-  width: calc(100% - 2rem);
-  border-radius: 0.625rem;
+  width: var(--qr-width);
+  border-radius: calc(var(--card-radius)/2);
 }
 
 .card-content {
