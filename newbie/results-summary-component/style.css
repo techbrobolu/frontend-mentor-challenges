@@ -8,18 +8,107 @@
   /* Neutral Colors */
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
-  --light-lavender: hsl(241, 100%, 89%);
+  --light-lavender: hsl(241, 100%, 90%);
+  --out-of-color: hsla(241, 100%, 89%, 0.75);
   --dark-gray-blue: hsl(224, 30%, 27%);
 
   /* Gradients */
-  --results-section-bg: linear-gradient(
-    to bottom,
-    hsl(252, 100%, 67%),
-    hsl(241, 100%, 65%)
+  --results-section-bg: radial-gradient(
+    circle at top center,
+    hsl(252, 100%, 67%) 2% 3%,
+    hsl(241, 100%, 65%) 98%
   );
   --circle-bg: linear-gradient(
-    to bottom,
-    hsla(241, 72%, 46%, 0),
-    hsla(256, 72%, 46%, 1)
+    to top,
+    hsla(241, 72%, 46%, 0) 2%,
+    hsla(256, 72%, 46%, 0.85) 98%
   );
+
+  /* Fonts */
+  --ff: "Hanken Grotesk", sans-serif;
+  --text-section-heading: 500 calc(24rem / 16) / 1.25 var(--ff);
+  --text-p: 500 calc(18rem / 16) / 1.25 var(--ff);
+  --text-score: 700 calc(70rem / 16) / 1 var(--ff);
+  --text-remark: 600 calc(32rem / 16) / 1.25 var(--ff);
+
+  /* Lengths, Radii, Gaps */
+  --card-width: 43rem;
+  --card-radius: 2rem;
+  --score-circle-size: calc(184rem/16);
+  --section-padding: 2.5rem;
+  --gap-big: 2.5rem;
+  --gap-medium: 0.75rem;
+  --gap-small: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--pale-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: var(--card-width);
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: var(--card-radius);
+}
+
+section.results {
+  background: var(--results-section-bg);
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-big);
+  border-radius: var(--card-radius);
+  color: var(--white);
+
+  & h1 {
+    font: var(--text-section-heading);
+    color: var(--light-lavender);
+  }
+}
+
+section.results .score-circle {
+  background: var(--circle-bg);
+  width: var(--score-circle-size);
+  height: var(--score-circle-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-big);
+  border-radius: 50%;
+
+  & .score {
+    font: var(--text-score);
+  }
+  & .out-of{
+    font: var(--text-p);
+    color: var(--out-of-color);
+  }
+}
+
+section.results .remarks {
+  text-align: center;
+
+  & h2 {
+    font: var(--text-remark);
+    margin-block-end: var(--gap-medium);
+  }
+  & p {
+    font: var(--text-p);
+    color: var(--light-lavender);
+  }
 }
