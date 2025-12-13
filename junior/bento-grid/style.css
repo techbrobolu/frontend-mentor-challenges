@@ -1,13 +1,93 @@
-:root{
-    /* Colors */
-    --purple-100: hsl(254, 88%, 90%);
-    --purple-500: hsl(256, 67%, 59%);
-    --yellow-100: hsl(31, 66%, 93%);
-    --yellow-500: hsl(39, 100%, 71%);
-    --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 7%);
+:root {
+  /* Colors */
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
 
-    /* Fonts */
-    --ff: "DM Sans", sans-serif;
-    --text-p: 400 calc(18rem / 16) / 1.5 var(--ff);
+  --main-bg: hsla(254, 88%, 90%, 0.08);
+
+  /* Lengths, gaps and radii */
+  --campaign-border-radius: 0.625rem;
+
+  /* Fonts */
+  --ff: "DM Sans", sans-serif;
+  --text-h1: 500 calc(63rem / 16) / 1 var(--ff);
+  --text-h2: 500 calc(36rem / 16) / 1.25 var(--ff);
+  --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.campaign-grid {
+  margin: 2rem 1rem;
+  width: 72rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "item-7 item-1 item-1 item-4"
+    "item-7 item-2 item-3 item-4"
+    "item-8 item-2 item-3 item-4"
+    "item-8 item-2 item-5 item-5";
+
+  & article.campaign {
+    border-radius: var(--campaign-border-radius);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    & p {
+      font: var(--text-p);
+    }
+    & h2 {
+      font: var(--text-h2);
+    }
+  }
+  & .purple-500 {
+    background-color: var(--purple-500);
+  }
+  & .yellow-500 {
+    background-color: var(--yellow-500);
+  }
+  & .white {
+    background-color: var(--white);
+  }
+}
+
+.campaign-1 {
+  grid-area: item-1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: var(--white);
+  padding: 3.75rem 2rem;
+
+  & h1 {
+    font: var(--text-h1);
+  }
+  & span{
+    color: var(--yellow-500);
+  }
+  & .rating{
+    width: 100%;
+  }
+  & img{
+    width: 11.5rem;
+  }
 }
