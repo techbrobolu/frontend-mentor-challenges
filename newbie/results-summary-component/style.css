@@ -23,6 +23,11 @@
     hsla(241, 72%, 46%, 0) 2%,
     hsla(256, 72%, 46%, 0.85) 98%
   );
+  --button-hover-bg: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%) 2% 5%,
+    hsl(241, 100%, 65%) 98%
+  );
 
   /* Fonts */
   --ff: "Hanken Grotesk", sans-serif;
@@ -35,9 +40,9 @@
   --card-width: 43rem;
   --card-radius: 2rem;
   --score-circle-size: calc(184rem / 16);
-  --section-padding: 2.35rem;
+  --section-padding: 2.2rem;
   --score-circle-padding: 2.5rem;
-  --gap-xlg: 2.45rem;
+  --gap-xlg: 2.15rem;
   --gap-lg: 1.5rem;
   --gap-md: 0.75rem;
   --gap-s: 1rem;
@@ -136,6 +141,10 @@ section.summary {
     font: var(--text-p);
     border-radius: var(--card-radius);
     cursor: pointer;
+
+    &:hover{
+      background: var(--button-hover-bg);
+    }
   }
 }
 
@@ -199,4 +208,15 @@ section.summary .summary-items {
   & .item-info {
     color: var(--visual-color);
   }
+}
+
+@media (max-width: 750px) {
+    main{
+        grid-template-columns: 1fr;
+
+        & section.results{
+            border-start-start-radius: 0;
+            border-start-end-radius: 0;
+        }
+    }
 }
