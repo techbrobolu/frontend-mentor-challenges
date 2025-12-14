@@ -37,7 +37,7 @@ body {
 
 main.campaign-grid {
   margin: 2rem 1rem;
-  width: 75rem;
+  width: 76rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
@@ -51,12 +51,35 @@ main.campaign-grid {
     border-radius: var(--campaign-border-radius);
     overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
 
     & p {
       font: var(--text-p);
+    }
+    &:nth-child(1) {
+      grid-area: item-1;
+    }
+    &:nth-child(2) {
+      grid-area: item-2;
+    }
+    &:nth-child(3) {
+      grid-area: item-3;
+    }
+    &:nth-child(4) {
+      grid-area: item-4;
+    }
+    &:nth-child(5) {
+      grid-area: item-5;
+    }
+    &:nth-child(6) {
+      grid-area: item-6;
+    }
+    &:nth-child(7) {
+      grid-area: item-7;
+    }
+    &:nth-child(8) {
+      grid-area: item-8;
     }
   }
   & .purple-500 {
@@ -92,8 +115,19 @@ main.campaign-grid {
   }
 }
 
+.campaign-3 {
+  padding-inline: 2rem;
+  padding-block-start: 2rem;
+  gap: 1.5rem;
+  & h2{
+    font: var(--text-h2-small);
+  }
+  & img{
+    width: 15rem;
+  }
+}
+
 .campaign-4 {
-  grid-area: item-4;
   background-color: var(--purple-100);
   gap: 2rem;
   padding: 2.5rem;
@@ -107,7 +141,6 @@ main.campaign-grid {
 }
 
 .campaign-6 {
-  grid-area: item-6;
   padding: 1.5rem;
   gap: 1rem;
 
