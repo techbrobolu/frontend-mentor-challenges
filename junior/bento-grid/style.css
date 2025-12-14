@@ -15,8 +15,8 @@
   /* Fonts */
   --ff: "DM Sans", sans-serif;
   --text-preset-1: 400 calc(63rem / 16) / 1 var(--ff);
-  --text-preset-2: 600 calc(33rem / 16) / 1 var(--ff);
-  --text-preset-3: 600 calc(30rem / 16) / 0.85 var(--ff);
+  --text-preset-2: 600 calc(40rem / 16) / 0.85 var(--ff);
+  --text-preset-3: 600 calc(32rem / 16) / 0.85 var(--ff);
   --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
 }
 
@@ -37,9 +37,9 @@ body {
 
 main.campaign-grid {
   margin: 2rem 1rem;
-  width: 76rem;
+  width: 75.75rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-columns: 1fr;
   grid-template-areas:
     "item-7 item-1 item-1 item-4"
     "item-7 item-2 item-3 item-4"
@@ -108,6 +108,7 @@ main.campaign-grid {
   }
   & .rating {
     width: 100%;
+    color: var(--white);
   }
   & img {
     width: 11.5rem;
@@ -117,9 +118,13 @@ main.campaign-grid {
 .campaign-2 {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 2rem;
   padding: 1rem;
 
+  & img {
+    width: 21.75rem;
+  }
   & h2 {
     font: var(--text-preset-3);
   }
@@ -158,18 +163,18 @@ main.campaign-grid {
 }
 
 article.campaign.campaign-5 {
-  /* padding: 1.75rem; */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  display: flex;
   align-items: center;
   color: var(--white);
+  gap: 1rem;
+  padding-inline: 1.5rem;
 
   & img {
     width: 15rem;
   }
   & h2 {
     font: var(--text-preset-2);
+    font-weight: 400;
     color: var(--white);
   }
 }
@@ -193,20 +198,36 @@ article.campaign.campaign-5 {
 
 .campaign-7 {
   background-color: var(--yellow-100);
-  display: grid;
-  justify-content: start;
-  align-content: center;
-  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
   gap: 2rem;
 
   & h2 {
     font: var(--text-preset-2);
 
-    & span{
+    & span {
       color: var(--purple-500);
     }
   }
   & img {
     width: 100%;
+  }
+}
+
+.campaign-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 1.5rem;
+
+  & h2 {
+    font: var(--text-preset-2);
+  }
+  & img {
+    width: 15rem;
   }
 }
