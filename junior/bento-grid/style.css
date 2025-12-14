@@ -14,10 +14,10 @@
 
   /* Fonts */
   --ff: "DM Sans", sans-serif;
-  --text-h1: 500 calc(63rem / 16) / 1 var(--ff);
-  --text-h2: 600 calc(36rem / 16) / 1.25 var(--ff);
-  --text-h2-small: 600 calc(32rem / 16) / 0.85 var(--ff);
-  --text-p: 500 calc(18rem / 16) / 1.25 var(--ff);
+  --text-preset-1: 400 calc(63rem / 16) / 1 var(--ff);
+  --text-preset-2: 400 calc(33rem / 16) / 1.25 var(--ff);
+  --text-preset-3: 600 calc(30rem / 16) / 0.85 var(--ff);
+  --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
 }
 
 * {
@@ -50,9 +50,6 @@ main.campaign-grid {
   & article.campaign {
     border-radius: var(--campaign-border-radius);
     overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
 
     & p {
       font: var(--text-p);
@@ -94,15 +91,17 @@ main.campaign-grid {
 }
 
 .campaign-1 {
+  display: flex;
+  flex-direction: column;
   grid-area: item-1;
   text-align: center;
   align-items: center;
   gap: 2rem;
-  color: var(--white);
   padding: 3.75rem 2rem;
 
   & h1 {
-    font: var(--text-h1);
+    font: var(--text-preset-1);
+    color: var(--white);
   }
   & span {
     color: var(--yellow-500);
@@ -116,36 +115,64 @@ main.campaign-grid {
 }
 
 .campaign-3 {
-  padding-inline: 2rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-inline: 1.75rem;
   padding-block-start: 2rem;
   gap: 1.5rem;
-  & h2{
-    font: var(--text-h2-small);
+
+  & h2 {
+    font: var(--text-preset-3);
   }
-  & img{
-    width: 15rem;
+  & img {
+    width: 13.5rem;
   }
 }
 
 .campaign-4 {
   background-color: var(--purple-100);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 2rem;
-  padding: 2.5rem;
+  padding: 2.75rem 2.5rem;
 
   & h2 {
-    font: var(--text-h2-small);
+    font: var(--text-preset-3);
   }
   & img {
-    width: 22.5rem;
+    width: 22.75rem;
+  }
+}
+
+article.campaign.campaign-5 {
+  /* padding: 1.75rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  color: var(--white);
+
+  & img {
+    width: 15rem;
+  }
+  & h2 {
+    font: var(--text-preset-2);
+    color: var(--white);
   }
 }
 
 .campaign-6 {
   padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 1rem;
 
   & h2 {
-    font: var(--text-h1);
+    font: var(--text-preset-1);
+    font-weight: 600;
   }
   & img {
     width: 11.5rem;
