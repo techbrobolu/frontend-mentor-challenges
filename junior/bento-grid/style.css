@@ -15,7 +15,7 @@
   /* Fonts */
   --ff: "DM Sans", sans-serif;
   --text-preset-1: 400 calc(63rem / 16) / 1 var(--ff);
-  --text-preset-2: 400 calc(33rem / 16) / 1.25 var(--ff);
+  --text-preset-2: 600 calc(33rem / 16) / 1 var(--ff);
   --text-preset-3: 600 calc(30rem / 16) / 0.85 var(--ff);
   --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
 }
@@ -114,13 +114,13 @@ main.campaign-grid {
   }
 }
 
-.campaign-2{
+.campaign-2 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
 
-  & h2{
+  & h2 {
     font: var(--text-preset-3);
   }
 }
@@ -188,5 +188,25 @@ article.campaign.campaign-5 {
   & img {
     width: 11.5rem;
     margin-block-start: 1rem;
+  }
+}
+
+.campaign-7 {
+  background-color: var(--yellow-100);
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  padding-inline: 2rem;
+  gap: 2rem;
+
+  & h2 {
+    font: var(--text-preset-2);
+
+    & span{
+      color: var(--purple-500);
+    }
+  }
+  & img {
+    width: 100%;
   }
 }
