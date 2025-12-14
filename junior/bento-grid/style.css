@@ -7,7 +7,7 @@
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 7%);
 
-  --main-bg: hsla(254, 88%, 90%, 0.08);
+  --main-bg: hsla(254, 88%, 90%, 0.2);
 
   /* Lengths, gaps and radii */
   --campaign-border-radius: 0.625rem;
@@ -15,9 +15,9 @@
   /* Fonts */
   --ff: "DM Sans", sans-serif;
   --text-h1: 500 calc(63rem / 16) / 1 var(--ff);
-  --text-h2: 500 calc(36rem / 16) / 1.25 var(--ff);
-  --text-h2-small: 500 calc(32rem / 16) / 1.25 var(--ff);
-  --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
+  --text-h2: 600 calc(36rem / 16) / 1.25 var(--ff);
+  --text-h2-small: 600 calc(32rem / 16) / 0.85 var(--ff);
+  --text-p: 500 calc(18rem / 16) / 1.25 var(--ff);
 }
 
 * {
@@ -27,7 +27,8 @@
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--main-bg);
+  color: var(--black);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -43,8 +44,7 @@ main.campaign-grid {
     "item-7 item-1 item-1 item-4"
     "item-7 item-2 item-3 item-4"
     "item-8 item-2 item-3 item-4"
-    "item-8 item-2 item-5 item-5"
-  ;
+    "item-8 item-6 item-5 item-5";
   gap: 2.5rem;
 
   & article.campaign {
@@ -81,27 +81,41 @@ main.campaign-grid {
   & h1 {
     font: var(--text-h1);
   }
-  & span{
+  & span {
     color: var(--yellow-500);
   }
-  & .rating{
+  & .rating {
     width: 100%;
   }
-  & img{
+  & img {
     width: 11.5rem;
   }
 }
 
-.campaign-4{
+.campaign-4 {
   grid-area: item-4;
   background-color: var(--purple-100);
   gap: 2rem;
   padding: 2.5rem;
 
-  & h2{
+  & h2 {
     font: var(--text-h2-small);
   }
-  & img{
+  & img {
     width: 22.5rem;
+  }
+}
+
+.campaign-6 {
+  grid-area: item-6;
+  padding: 1.5rem;
+  gap: 1rem;
+
+  & h2 {
+    font: var(--text-h1);
+  }
+  & img {
+    width: 11.5rem;
+    margin-block-start: 1rem;
   }
 }
