@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf");
+  font-weight: 400 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/DMSans-VariableFont_opsz,wght.ttf");
+  font-weight: 400 500;
+  font-style: normal;
+}
+
 :root {
   /* Colors */
   --purple-100: hsl(254, 88%, 90%);
@@ -11,13 +25,15 @@
 
   /* Lengths, gaps and radii */
   --campaign-border-radius: 0.625rem;
+  --grid-width: 69rem;
+  --grid-gap: 2rem;
 
   /* Fonts */
   --ff: "DM Sans", sans-serif;
-  --text-preset-1: 400 calc(63rem / 16) / 1 var(--ff);
-  --text-preset-2: 600 calc(40rem / 16) / 0.85 var(--ff);
-  --text-preset-3: 600 calc(32rem / 16) / 0.85 var(--ff);
-  --text-p: 400 calc(18rem / 16) / 1.25 var(--ff);
+  --text-preset-1: 500 calc(63rem / 16) / 1 var(--ff);
+  --text-preset-2: 500 calc(40rem / 16) / 0.85 var(--ff);
+  --text-preset-3: 500 calc(32rem / 16) / 0.85 var(--ff);
+  --text-p: 400 calc(18rem / 16) / 1 var(--ff);
 }
 
 * {
@@ -36,16 +52,17 @@ body {
 }
 
 main.campaign-grid {
-  margin: 2rem 1rem;
-  width: 75.75rem;
+  margin-block: 2rem;
+  width: min(90%, var(--grid-width));
   display: grid;
   grid-auto-columns: 1fr;
+  grid-template-rows: auto 4rem auto auto;
   grid-template-areas:
     "item-7 item-1 item-1 item-4"
     "item-7 item-2 item-3 item-4"
     "item-8 item-2 item-3 item-4"
     "item-8 item-6 item-5 item-5";
-  gap: 2.5rem;
+  gap: var(--grid-gap);
 
   & article.campaign {
     border-radius: var(--campaign-border-radius);
@@ -53,6 +70,9 @@ main.campaign-grid {
 
     & p {
       font: var(--text-p);
+    }
+    & h2 {
+      letter-spacing: -0.125rem;
     }
     &:nth-child(1) {
       grid-area: item-1;
@@ -79,13 +99,13 @@ main.campaign-grid {
       grid-area: item-8;
     }
   }
-  & .purple-500 {
+  & .campaign.purple-500 {
     background-color: var(--purple-500);
   }
-  & .yellow-500 {
+  & .campaign.yellow-500 {
     background-color: var(--yellow-500);
   }
-  & .white {
+  & .campaign.white {
     background-color: var(--white);
   }
 }
@@ -120,7 +140,7 @@ main.campaign-grid {
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1.75rem;
 
   & img {
     width: 21.75rem;
@@ -142,7 +162,13 @@ main.campaign-grid {
     font: var(--text-preset-3);
   }
   & img {
-    width: 13.5rem;
+    width: clamp(3.5rem, calc(200px + 1vw), 100%);
+    height: auto;
+  }
+  & .image-container {
+    width: clamp(3.5rem, calc(200px + 1vw), 100%);
+    max-height: clamp(5.35rem, calc(100px - 1vw), 8.85rem);
+    overflow: hidden;
   }
 }
 
@@ -152,7 +178,7 @@ main.campaign-grid {
   align-items: flex-start;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.75rem 2.5rem;
+  padding: 2.75rem 2rem;
 
   & h2 {
     font: var(--text-preset-3);
@@ -188,7 +214,6 @@ article.campaign.campaign-5 {
 
   & h2 {
     font: var(--text-preset-1);
-    font-weight: 600;
   }
   & img {
     width: 11.5rem;
@@ -213,7 +238,7 @@ article.campaign.campaign-5 {
     }
   }
   & img {
-    width: 100%;
+    width: 11rem;
   }
 }
 
