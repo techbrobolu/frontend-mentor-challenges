@@ -54,7 +54,7 @@ body {
 
 main.campaign-grid {
   margin-block: 2.5rem;
-  width: min(95%, var(--grid-width));
+  width: 95%;
   display: grid;
   gap: var(--grid-gap);
 
@@ -159,7 +159,7 @@ main.campaign-grid {
     font: var(--text-preset-3);
   }
   & .image-container {
-    width: max(calc(17rem + 1vw), 100%);
+    width: 18rem;
 
     & img {
       width: 100%;
@@ -168,7 +168,7 @@ main.campaign-grid {
   }
 }
 
-article.campaign.campaign-5 {
+.campaign-5 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,7 +176,7 @@ article.campaign.campaign-5 {
   padding: 1.5rem;
   text-align: center;
   color: var(--white);
-  
+
   & img {
     width: 15rem;
   }
@@ -240,6 +240,65 @@ article.campaign.campaign-5 {
 
     & img {
       width: 100%;
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 650px) {
+  main.campaign-grid {
+    width: 80%;
+  }
+  .campaign-5 {
+    & h2 {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 650px) and (max-width: 992px) {
+  main.campaign-grid {
+    width: 80%;
+    max-width: 36rem;
+  }
+
+  .campaign-1 {
+    grid-column: 1 / span 2;
+  }
+
+  .campaign-2 {
+    grid-column: 2;
+    grid-row: 2 / 3;
+  }
+
+  .campaign-3 {
+    grid-row: 3;
+  }
+
+  .campaign-4 {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    gap: 3rem;
+
+    & .image-container {
+      width: 100%;
+    }
+  }
+
+  .campaign-5 {
+    grid-column: 1 / span 2;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .campaign-8 {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & h2 {
+      width: 18rem;
     }
   }
 }
