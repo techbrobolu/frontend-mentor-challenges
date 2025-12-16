@@ -1,0 +1,16 @@
+:root{
+    /* Colors */
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --text-color: hsl(215, 51%, 70%);
+    --accent-color: hsl(178, 100%, 50%);
+    --line-color: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --ff: "Outfit", sans-serif;
+    --font-lg: 600 1.5rem / 1.5 var(--ff);
+    --font-md: 300 calc(18rem / 16) / 1 var(--ff);
+    --font-sm: 300 calc(14rem / 16) / 1.5 var(--ff);
+    --font-sm-bold: 400 calc(14rem / 16) / 1.5 var(--ff);
+}
