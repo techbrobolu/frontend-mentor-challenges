@@ -1,15 +1,169 @@
-:root{
-    /* Colors */
-    --card-bg: hsl(225, 100%, 98%);
-    --plan-bg: hsl(225, 100%, 94%);
-    --proceed-bg: hsl(245, 75%, 52%);
-    --text-color: hsl(224, 23%, 55%);
-    --heading-color: hsl(223, 47%, 23%);
+:root {
+  /* Colors */
+  --main-bg: hsl(225, 100%, 94%);
+  --card-bg: hsl(0, 0%, 100%);
+  --plan-bg: hsl(225, 100%, 98%);
+  --proceed-bg: hsl(245, 75%, 52%);
+  --proceed-hover-bg: color-mix(in lab, white 30%, var(--proceed-bg));
+  --text-color: hsl(224, 23%, 55%);
+  --heading-color: hsl(223, 47%, 23%);
 
-    /* Fonts */
-    --ff: "Red Hat Display", sans-serif;
-    --text-preset-1: 900 1.75rem/1.5 var(--ff);
-    --text-preset-2: 500 1rem/1.5 var(--ff);
-    --text-preset-3: 700 1rem/1.5 var(--ff);
-    --text-preset-4: 500 0.75rem/1.5 var(--ff);
+  --proceed-shadow: 0px 20px 20px 2px hsla(224, 23%, 55%, 0.2);
+
+  /* Fonts */
+  --ff: "Red Hat Display", sans-serif;
+  --text-preset-1: 900 1.5rem/1.5 var(--ff);
+  --text-preset-2: 500 1rem/1.5 var(--ff);
+  --text-preset-3: 900 1rem/1.5 var(--ff);
+  --text-preset-4: 700 0.9rem/1.5 var(--ff);
+  --text-preset-4-bold: 900 0.9rem/1.5 var(--ff);
+  --text-preset-5: 900 0.75rem/1.5 var(--ff);
+
+  /* Other */
+  --card-width: min(85%, 25rem);
+  --card-margin: 4.5rem auto;
+  --card-radius: 1.5rem;
+  --button-radius: 0.65rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("images/pattern-background-mobile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--main-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.summary-card {
+  width: var(--card-width);
+  margin: var(--card-margin);
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 1.25rem 1.55rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+
+  & .card-title {
+    font: var(--text-preset-1);
+    color: var(--heading-color);
+  }
+  & .order-desc {
+    font: var(--text-preset-2);
+    color: var(--text-color);
+  }
+}
+
+.subscription-plan {
+  width: 100%;
+  background-color: var(--plan-bg);
+  padding: 1rem;
+  border-radius: var(--button-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-details {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  &img {
+    height: 100%;
+  }
+  & .plan-price {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & .title {
+      font: var(--text-preset-4-bold);
+      color: var(--heading-color);
+    }
+    & .price {
+      font: var(--text-preset-4);
+      color: var(--text-color);
+    }
+  }
+}
+
+.change-link {
+  color: var(--proceed-bg);
+  font: var(--text-preset-5);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--proceed-hover-bg);
+  }
+}
+
+.control-buttons {
+  width: 100%;
+  margin-block-start: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.control-buttons a {
+  width: 100%;
+  padding: 0.75rem;
+  font: var(--text-preset-3);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  text-decoration: none;
+
+  &.proceed-button {
+    background-color: var(--proceed-bg);
+    box-shadow: var(--proceed-shadow);
+    color: var(--card-bg);
+
+    &:hover {
+      background-color: var(--proceed-hover-bg);
+    }
+  }
+  &.cancel-button {
+    padding: 0.5rem;
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--heading-color);
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-image: url(images/pattern-background-desktop.svg);
+  }
+  .card-content {
+    padding: 2rem;
+  }
 }
