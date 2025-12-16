@@ -1,16 +1,5 @@
-@font-face {
-  font-family: "DM Sans";
-  src: url("assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf");
-  font-weight: 400 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("assets/fonts/DMSans-VariableFont_opsz,wght.ttf");
-  font-weight: 400 500;
-  font-style: normal;
-}
+@import url(assets/fonts/DMSans-VariableFont_opsz\wght.woff);
+@import url(assets/fonts/DMSans-Italic-VariableFont_opsz\wght.woff);
 
 :root {
   /* Colors */
@@ -25,8 +14,9 @@
 
   /* Lengths, gaps and radii */
   --campaign-border-radius: 0.625rem;
-  --grid-width: 67rem;
-  --grid-gap: 2rem;
+  --grid-width: 68rem;
+  --grid-gap: 1.75rem;
+  --letter-spacing: -0.05rem;
 
   /* Fonts */
   --ff: "DM Sans", sans-serif;
@@ -66,7 +56,7 @@ main.campaign-grid {
       font: var(--text-p);
     }
     & h2 {
-      letter-spacing: -0.125rem;
+      letter-spacing: var(--letter-spacing);
     }
   }
   & .campaign.purple-500 {
@@ -109,8 +99,8 @@ main.campaign-grid {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.75rem;
+  gap: 0.5rem;
+  padding: 1.25rem;
 
   & .image-container {
     width: max(calc(18rem + 1vw), 100%);
@@ -128,7 +118,7 @@ main.campaign-grid {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding-inline: 1.75rem;
+  padding-inline: 1.25rem;
   padding-block-start: 2rem;
   gap: 1.5rem;
 
@@ -151,8 +141,9 @@ main.campaign-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 2.75rem 2rem;
+  gap: 1.75rem;
+  padding-block: 3rem;
+  padding-inline-start: 2rem;
   text-align: center;
 
   & h2 {
@@ -163,7 +154,6 @@ main.campaign-grid {
 
     & img {
       width: 100%;
-      max-width: 21rem;
     }
   }
 }
@@ -173,7 +163,7 @@ main.campaign-grid {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   text-align: center;
   color: var(--white);
 
@@ -189,10 +179,11 @@ main.campaign-grid {
 }
 
 .campaign-6 {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 1rem;
 
   & h2 {
@@ -208,7 +199,7 @@ main.campaign-grid {
   background-color: var(--yellow-100);
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: flex-start;
   padding: 2rem;
   gap: 2rem;
@@ -305,36 +296,82 @@ main.campaign-grid {
 
 @media screen and (min-width: 992px) {
   main.campaign-grid {
+    width: min(90%, var(--grid-width));
     grid-auto-columns: 1fr;
+    grid-template-rows: 20rem 4.5rem 9.75rem auto;
     grid-template-areas:
       "item-7 item-1 item-1 item-4"
       "item-7 item-2 item-3 item-4"
       "item-8 item-2 item-3 item-4"
       "item-8 item-6 item-5 item-5";
 
-    &:nth-child(1) {
+    & :nth-child(1) {
       grid-area: item-1;
     }
-    &:nth-child(2) {
+    & :nth-child(2) {
       grid-area: item-2;
     }
-    &:nth-child(3) {
+    & :nth-child(3) {
       grid-area: item-3;
     }
-    &:nth-child(4) {
+    & :nth-child(4) {
       grid-area: item-4;
     }
-    &:nth-child(5) {
+    & :nth-child(5) {
       grid-area: item-5;
     }
-    &:nth-child(6) {
+    & :nth-child(6) {
       grid-area: item-6;
     }
-    &:nth-child(7) {
+    & :nth-child(7) {
       grid-area: item-7;
     }
-    &:nth-child(8) {
+    & :nth-child(8) {
       grid-area: item-8;
+      /* grid-row: 3 / span 2; */
+    }
+  }
+
+  .campaign-2 {
+    & .image-container {
+      width: fit-content;
+      height: fit-content;
+      & img {
+        width: 19.75rem;
+      }
+    }
+  }
+
+  .campaign-3 {
+    & .image-container {
+      overflow: visible;
+      width: fit-content;
+      height: fit-content;
+      & img {
+        width: 12rem;
+      }
+    }
+  }
+
+  .campaign-4 {
+    align-items: flex-start;
+    text-align: start;
+
+    & .image-container {
+      width: 22rem;
+    }
+  }
+
+  .campaign-5 {
+    flex-direction: row;
+    text-align: start;
+    gap: 1rem;
+
+    & img {
+      width: 14rem;
+    }
+    & h2 {
+      width: 100%;
     }
   }
 }
