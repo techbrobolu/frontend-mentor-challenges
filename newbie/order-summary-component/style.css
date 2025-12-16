@@ -1,0 +1,15 @@
+:root{
+    /* Colors */
+    --card-bg: hsl(225, 100%, 98%);
+    --plan-bg: hsl(225, 100%, 94%);
+    --proceed-bg: hsl(245, 75%, 52%);
+    --text-color: hsl(224, 23%, 55%);
+    --heading-color: hsl(223, 47%, 23%);
+
+    /* Fonts */
+    --ff: "Red Hat Display", sans-serif;
+    --text-preset-1: 900 1.25em/1.5 var(--ff);
+    --text-preset-2: 500 0.875em/1.5 var(--ff);
+    --text-preset-3: 700 0.875em/1.5 var(--ff);
+    --text-preset-4: 500 0.75em/1.5 var(--ff);
+}
