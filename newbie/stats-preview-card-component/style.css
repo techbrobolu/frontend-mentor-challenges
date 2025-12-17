@@ -1,16 +1,119 @@
-:root{
-    /* Colors */
-    --main-bg: hsl(233, 47%, 7%);
-    --card-bg: hsl(244, 38%, 16%);
-    --accent-color: hsl(277, 64%, 61%);
-    --text-color: hsla(0, 0%, 100%, 0.75);
-    --stat-headings: hsla(0, 0%, 100%, 0.6);
-    --white: hsl(0, 0%, 100%);
+:root {
+  /* Colors */
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --accent-color: hsl(277, 64%, 61%);
+  --text-color: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+  --white: hsl(0, 0%, 100%);
 
-    /* Fonts */
-    --ff: "Inter", sans-serif;
-    --font-lg: 700 calc(22rem / 16) / 1.5 var(--ff);
-    --font-md: 400 calc(18rem / 16) / 1.5 var(--ff);
-    --font-sm: 400 calc(15rem / 16) / 1.5 var(--ff);
-    --font-xs: 400 calc(14rem / 16) / 1.5 var(--ff);
+  /* Fonts */
+  --ff: "Inter", sans-serif;
+  --ff-sec: "Lexend Deca", sans-serif;
+  --font-lg: 700 calc(28rem / 16) / 1.25 var(--ff);
+  --font-md: 600 calc(28rem / 16) / 1.5 var(--ff);
+  --font-sm: 400 calc(15rem / 16) / 1.5 var(--ff);
+  --font-xs: 300 calc(14rem / 16) / 1.5 var(--ff-sec);
+
+  /* Lengths, gaps and radii */
+  --card-margin: 5rem auto;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.stats-card {
+  margin: var(--card-margin);
+  background-color: var(--card-bg);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  width: min(90%, 25rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+}
+
+.stats-card__image img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  & .card-title {
+    font: var(--font-lg);
+    color: var(--white);
+    text-align: center;
+
+    & span {
+      color: var(--accent-color);
+    }
+  }
+  & .card-desc {
+    font: var(--font-sm);
+    color: var(--text-color);
+    text-align: center;
+  }
+}
+
+.card-stats {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.stat {
+  & .stat-title {
+    font: var(--font-md);
+    color: var(--white);
+  }
+  & .stat-desc {
+    font: var(--font-xs);
+    color: var(--stat-headings);
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+  }
 }

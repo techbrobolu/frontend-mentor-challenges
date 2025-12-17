@@ -13,32 +13,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Stats preview card component</title>
   </head>
   <body>
     <main class="stats-card">
       <div class="image-container">
-        <picture>
+        <picture class="stats-card__image">
           <source
             media="(min-width: 600px)"
             srcset="./images/image-header-desktop.jpg"
           />
-          <img
-            src="images/image-header-mobile.jpg"
-            alt="image-header-mobile"
-            class="image"
-          />
+          <img src="images/image-header-mobile.jpg" alt="image-header-mobile" />
         </picture>
       </div>
       <div class="card-content">
         <div class="card-copy">
           <p class="card-title">
-            Get <span class="accent">insights</span>that help your business
+            Get <span class="accent">insights</span> that help your business
             grow.
           </p>
           <p class="card-desc">
