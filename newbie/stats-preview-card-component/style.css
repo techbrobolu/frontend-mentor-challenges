@@ -19,6 +19,7 @@
   /* Lengths, gaps and radii */
   --card-margin: 5rem auto;
   --card-width-mobile: min(90vw, 25rem);
+  --card-width-tablet: 35rem;
   --card-image-height-mobile: calc(var(--card-width-mobile) * (480 / 654));
   --card-radius: 0.5rem;
 }
@@ -113,7 +114,49 @@ body {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media (min-width: 700px) and (max-width: 1200px) {
+  .stats-card {
+    width: var(--card-width-tablet);
+    height: fit-content;
+  }
+
+  .card-image {
+    height: var(--card-image-height-mobile);
+    background-image: url("images/image-header-mobile.jpg");
+  }
+
+  .card-content {
+    padding: 4rem;
+    gap: 3rem;
+
+    & .card-copy {
+      justify-items: center;
+    }
+    & .card-title {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    & .card-desc {
+      width: 22.75rem;
+      text-align: center;
+    }
+  }
+
+  .card-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & .stat {
+      & .stat-title {
+        font-size: 1.5rem;
+      }
+      & .stat-desc {
+        font-size: 0.65rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
   .stats-card {
     grid-template-columns: 50% 50%;
     width: 70rem;
