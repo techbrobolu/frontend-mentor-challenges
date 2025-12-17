@@ -130,7 +130,8 @@ body {
     grid-column: 1/2;
     align-items: start;
     padding: 3rem;
-    gap: 3rem;
+    gap: 4rem;
+    justify-items: start;
 
     & .card-title {
       text-align: start;
@@ -142,5 +143,15 @@ body {
 
   .card-stats {
     grid-template-columns: 1fr 1fr 1fr;
+    text-align: start;
+
+    & .stat {
+      & .stat-title {
+        font-size: 1.5rem;
+      }
+      & .stat-desc {
+        font-size: 0.65rem;
+      }
+    }
   }
 }
