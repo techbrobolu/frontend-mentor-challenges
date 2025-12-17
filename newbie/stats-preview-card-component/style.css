@@ -5,6 +5,7 @@
   --accent-color: hsl(277, 64%, 61%);
   --text-color: hsla(0, 0%, 100%, 0.75);
   --stat-headings: hsla(0, 0%, 100%, 0.6);
+  --overlay-color: hsla(277, 79%, 24%, 0.55);
   --white: hsl(0, 0%, 100%);
 
   /* Fonts */
@@ -17,6 +18,9 @@
 
   /* Lengths, gaps and radii */
   --card-margin: 5rem auto;
+  --card-width-mobile: min(90vw, 25rem);
+  --card-image-height-mobile: calc(var(--card-width-mobile) * (480 / 654));
+  --card-radius: 0.5rem;
 }
 
 *,
@@ -38,48 +42,39 @@ body {
 .stats-card {
   margin: var(--card-margin);
   background-color: var(--card-bg);
-  border-radius: 0.625rem;
+  border-radius: var(--card-radius);
+  width: var(--card-width-mobile);
+  display: grid;
+  grid-template-columns: 1fr;
   overflow: hidden;
-  width: min(90%, 25rem);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.image-container {
+.card-image {
   position: relative;
-  overflow: hidden;
+  grid-row: 1/2;
+  height: var(--card-image-height-mobile);
+  background-image: url("images/image-header-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.image-container::before {
+.card-image::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--accent-color);
-  opacity: 0.9;
-  mix-blend-mode: multiply;
-}
-
-.stats-card__image img {
-  width: 100%;
+  background-color: var(--overlay-color);
 }
 
 .card-content {
+  display: grid;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-items: center;
   gap: 2rem;
 }
 
 .card-copy {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 1rem;
 
   & .card-title {
@@ -99,8 +94,7 @@ body {
 }
 
 .card-stats {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   text-align: center;
   gap: 1.5rem;
 }
@@ -115,5 +109,38 @@ body {
     color: var(--stat-headings);
     text-transform: uppercase;
     letter-spacing: 0.07rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .stats-card {
+    grid-template-columns: 50% 50%;
+    width: min(90%, 55rem);
+    height: fit-content;
+  }
+
+  .card-image {
+    height: auto;
+    grid-column: 2/3;
+    grid-row: 1;
+    background-image: url("images/image-header-desktop.jpg");
+  }
+
+  .card-content {
+    grid-column: 1/2;
+    align-items: start;
+    padding: 3rem;
+    gap: 3rem;
+
+    & .card-title {
+      text-align: start;
+    }
+    & .card-desc {
+      text-align: start;
+    }
+  }
+
+  .card-stats {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
