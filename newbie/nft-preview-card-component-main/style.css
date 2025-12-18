@@ -13,13 +13,14 @@
   --font-md: 300 calc(18rem / 16) / 1.5 var(--ff);
   --font-sm: 300 calc(16rem / 16) / 1.5 var(--ff);
   --font-sm-bold: 400 calc(16rem / 16) / 1.5 var(--ff);
-  
+
   /* Lengths, gaps and radii */
   --card-width: 21rem;
-  --card-radius: 0.625rem;
-  --card-padding: 1.5rem;
+  --card-radius: 1rem;
+  --card-padding: 1.375rem;
   --card-gap: 1rem;
   --image-radius: calc(var(--card-radius) / 2);
+  --image-height: calc(var(--card-width) - (var(--card-padding)*2));
 }
 
 *,
@@ -49,10 +50,6 @@ body {
   flex-direction: column;
   gap: var(--card-gap);
 
-  & img {
-    width: 100%;
-    border-radius: var(--image-radius);
-  }
   & h1 {
     font: var(--font-lg);
     color: var(--white);
@@ -64,6 +61,35 @@ body {
   & p {
     font: var(--font-md);
     color: var(--text-color);
+  }
+}
+
+.nft-image {
+  position: relative;
+  width: 100%;
+  height: var(--image-height);
+  overflow: hidden;
+  cursor: pointer;
+
+  & img {
+    width: 100%;
+    border-radius: var(--image-radius);
+  }
+  & .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-image: url("images/icon-view.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: hsla(178, 100%, 50%, 0.45);
+    opacity: 0;
+    border-radius: var(--image-radius);
+    
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
