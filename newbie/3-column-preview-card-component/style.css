@@ -9,7 +9,118 @@
   /* Fonts */
   --ff: "Lexend Deca", sans-serif;
   --ff-sec: "Big Shoulders", sans-serif;
-  --text-heading: 700 2rem/1.5 var(--ff-sec);
+  --text-heading: 700 2.25rem/1.5 var(--ff-sec);
   --text-p: 400 calc(15rem / 16) / 1.5 var(--ff);
-  --text-button: 400 1rem/1.5 var(--ff-sec);
+  --text-button: 400 1rem/1.5 var(--ff);
+
+  /* Other */
+  --grid-width: min(85%, 75rem);
+  --grid-radius: 0.5rem;
+  --grid-margin: 5rem;
+  --column-padding: 2rem;
+  --column-gap: 1.5rem;
+  --button-padding: 0.75rem 1.5rem;
+  --button-radius: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  font-family: var(--ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  width: var(--grid-width);
+  margin-block: var(--grid-margin);
+  border-radius: var(--grid-radius);
+  overflow: hidden;
+}
+
+.column {
+  padding: var(--column-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--column-gap);
+
+  & .column-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    & img {
+      width: 4rem;
+    }
+    & .column-heading {
+      font: var(--text-heading);
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    & .column-paragraph {
+      font: var(--text-p);
+      color: var(--paragraph-color);
+    }
+  }
+  & .learn-button {
+    border: none;
+    outline: none;
+    width: fit-content;
+    background-color: var(--white);
+    padding: var(--button-padding);
+    border-radius: var(--button-radius);
+    font: var(--text-button);
+    text-decoration: none;
+  }
+}
+
+.column-1 {
+  background-color: var(--gold-500);
+
+  & .learn-button {
+    color: var(--gold-500);
+
+    &:hover {
+      background-color: var(--gold-500);
+      color: var(--white);
+      outline: 2px solid var(--white);
+    }
+  }
+}
+.column-2 {
+  background-color: var(--cyan-800);
+
+  & .learn-button {
+    color: var(--cyan-800);
+
+    &:hover {
+      background-color: var(--cyan-800);
+      color: var(--white);
+      outline: 2px solid var(--white);
+    }
+  }
+}
+.column-3 {
+  background-color: var(--green-950);
+
+  & .learn-button {
+    color: var(--green-950);
+
+    &:hover {
+      background-color: var(--green-950);
+      color: var(--white);
+      outline: 2px solid var(--white);
+    }
+  }
 }
