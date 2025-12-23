@@ -1,0 +1,15 @@
+:root {
+  /* Colors */
+  --gold-500: hsl(31, 77%, 52%);
+  --cyan-800: hsl(184, 100%, 22%);
+  --green-950: hsl(179, 100%, 13%);
+  --paragraph-color: hsla(0, 0%, 100%, 0.75);
+  --white: hsl(0, 0%, 95%);
+
+  /* Fonts */
+  --ff: "Lexend Deca", sans-serif;
+  --ff-sec: "Big Shoulders", sans-serif;
+  --text-heading: 700 2rem/1.5 var(--ff-sec);
+  --text-p: 400 calc(15rem / 16) / 1.5 var(--ff);
+  --text-button: 400 1rem/1.5 var(--ff-sec);
+}
