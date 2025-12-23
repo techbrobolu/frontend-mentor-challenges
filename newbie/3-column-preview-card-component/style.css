@@ -14,11 +14,12 @@
   --text-button: 400 1rem/1.5 var(--ff);
 
   /* Other */
-  --grid-width: min(85%, 75rem);
+  --grid-width: min(85%, 57.5rem);
   --grid-radius: 0.5rem;
   --grid-margin: 5rem;
-  --column-padding: 2rem;
+  --column-padding: 3rem;
   --column-gap: 1.5rem;
+  --column-gap-big: 6rem;
   --button-padding: 0.75rem 1.5rem;
   --button-radius: 2rem;
 }
@@ -53,6 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  justify-content: space-between;
   gap: var(--column-gap);
 
   & .column-copy {
@@ -121,6 +123,16 @@ body {
       background-color: var(--green-950);
       color: var(--white);
       outline: 2px solid var(--white);
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+
+    & .column {
+      gap: var(--column-gap-big);
     }
   }
 }
