@@ -1,20 +1,20 @@
 :root {
+  /* Colors */
   --page-bg: hsl(212, 45%, 89%);
   --card-bg: hsl(0, 0%, 100%);
-
   --heading-color: hsl(218, 44%, 22%);
   --text-color: hsl(220, 15%, 55%);
 
+  /* Fonts */
+  --ff: "Outfit", sans-serif;
+  --text-preset-1: 700 calc(22rem / 16) / 1.25 var(--ff);
+  --text-preset-p: 400 calc(15rem / 16) / 1.5 var(--ff);
+
+  /* Other */
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   --card-height: 31.25rem;
   --card-width: 20rem;
   --card-radius: 0.625rem;
-
-  --qr-width: calc(100% - 2rem);
-
-  --ff: "Outfit", sans-serif;
-  --text-preset-1: 700 calc(22rem / 16) / 1.25 var(--ff);
-  --text-preset-p: 400 calc(15rem / 16) / 1.5 var(--ff);
 }
 
 * {
@@ -36,20 +36,19 @@ body {
   box-shadow: var(--card-shadow);
   height: var(--card-height);
   width: var(--card-width);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .qr-image {
-  width: var(--qr-width);
-  border-radius: calc(var(--card-radius)/2);
+  width: 100%;
+  border-radius: calc(var(--card-radius) / 2);
 }
 
 .card-content {
-  margin-block: 0.625rem;
-  padding: 0.625rem;
+  margin-block: 0.5rem;
   text-align: center;
 
   & h1 {
