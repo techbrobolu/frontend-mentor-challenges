@@ -14,7 +14,8 @@
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   --card-height: 31.25rem;
   --card-width: 20rem;
-  --card-radius: 0.625rem;
+  --card-radius: 1.5rem;
+  --image-radius: calc(var(--card-radius) / 2);
 }
 
 * {
@@ -23,6 +24,7 @@
   box-sizing: border-box;
   font-family: var(--ff);
 }
+
 body {
   background-color: var(--page-bg);
   display: flex;
@@ -30,6 +32,7 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
 .card {
   background-color: var(--card-bg);
   border-radius: var(--card-radius);
@@ -44,19 +47,21 @@ body {
 
 .qr-image {
   width: 100%;
-  border-radius: calc(var(--card-radius) / 2);
+  border-radius: var(--image-radius);
+  margin-block-end: 0.75rem;
 }
 
 .card-content {
   margin-block: 0.5rem;
   text-align: center;
 
-  & h1 {
+  & .card-heading {
     font: var(--text-preset-1);
     color: var(--heading-color);
   }
-  & p {
+  & .card-desc {
     margin-block-start: 1.25rem;
     font: var(--text-preset-p);
+    color: var(--text-color);
   }
 }
