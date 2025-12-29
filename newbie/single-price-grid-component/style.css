@@ -1,0 +1,15 @@
+:root{
+    /* Colors */
+    --teal-500: hsl(179, 62%, 43%);
+    --green-400: hsl(71, 73%, 54%);
+    --teal-100: hsl(204, 43%, 93%);
+    --grey-500: hsl(218, 22%, 67%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --ff: "Karla", sans-serif;
+    --text-xlg: 400 1.5rem / 1.5 var(--ff);
+    --text-lg: 700 1.5rem / 1.5 var(--ff);
+    --text-md: 400 calc(15rem / 16) / 1.5 var(--ff);
+    --text-sm: 400 1rem / 1.5 var(--ff);
+}
