@@ -13,6 +13,7 @@
 
   --ff: "Inter", sans-serif;
   --text-preset-1: 600 1.5rem / 1.5 var(--ff);
+  --text-preset-2-bold: 700 calc(14rem / 16) / 1.5 var(--ff);
   --text-preset-2-p-links: 600 calc(14rem / 16) / 1.5 var(--ff);
   --text-preset-2: 400 calc(14rem / 16) / 1.5 var(--ff);
 
