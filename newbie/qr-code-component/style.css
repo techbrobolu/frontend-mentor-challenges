@@ -14,7 +14,7 @@
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   --card-height: 31.25rem;
   --card-width: 20rem;
-  --card-radius: 1.5rem;
+  --card-radius: 1.25rem;
   --image-radius: calc(var(--card-radius) / 2);
 }
 
