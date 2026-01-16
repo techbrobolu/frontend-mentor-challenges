@@ -1,0 +1,17 @@
+:root{
+    /* Colors */
+    --main-color: hsl(300, 43%, 22%);
+    --sec-color: hsl(333, 80%, 67%);
+    --hero-text: hsl(303, 10%, 53%);
+    --review-text: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Fonts */
+    --ff: 'League Spartan', sans-serif;
+    --text-heading: 700 2.5rem/1.5 var(--ff);
+    --text-hero: 400 calc(15rem/16)/1.5 var(--ff);
+    --text-rating: 500 1.5rem/1.5 var(--ff);
+    --text-reviewer-name: 500 0.875rem/1.5 var(--ff);
+    --text-reviewer-status: 400 1rem/1.5 var(--ff);
+    --text-review: 400 1rem/1.5 var(--ff);
+}
