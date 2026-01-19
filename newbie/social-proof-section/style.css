@@ -9,11 +9,15 @@
   /* Fonts */
   --ff: "League Spartan", sans-serif;
   --text-heading: 700 2.5rem/0.85 var(--ff);
-  --text-hero: 400 1.1rem/ 1.3 var(--ff);
+  --text-hero: 400 1.1rem/1.3 var(--ff);
   --text-rating: 700 1rem/1.5 var(--ff);
   --text-reviewer-name: 700 calc(15rem / 16) / 1.1 var(--ff);
   --text-reviewer-status: 400 calc(15rem / 16) / 1.1 var(--ff);
   --text-review: 400 1rem/1.2 var(--ff);
+
+  /* Others */
+  --card-width: min(86%, 67rem);
+  --card-width-tablet: calc((0.86 * 673rem) / 16);
 }
 
 *,
@@ -35,7 +39,7 @@ body {
 }
 
 .container {
-  width: min(86%, 67rem);
+  width: var(--card-width);
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -129,7 +133,7 @@ body {
 }
 
 @media (min-width: 1008px) {
-  .container{
+  .container {
     gap: 5rem;
   }
 
@@ -143,23 +147,23 @@ body {
     max-width: 26rem;
   }
 
-  .hero-heading{
+  .hero-heading {
     font-size: 3.35rem;
   }
 
-  .ratings{
+  .ratings {
     max-width: 36rem;
   }
 
-  .rating-1{
+  .rating-1 {
     align-self: start;
   }
 
-  .rating-2{
+  .rating-2 {
     margin: 0 auto;
   }
 
-  .rating-3{
+  .rating-3 {
     align-self: end;
   }
 
@@ -175,15 +179,25 @@ body {
     height: 16rem;
   }
 
-  .review-card:nth-child(1){
+  .review-card:nth-child(1) {
     align-self: start;
   }
 
-  .review-card:nth-child(2){
+  .review-card:nth-child(2) {
     margin: auto 0;
   }
 
-  .review-card:nth-child(3){
+  .review-card:nth-child(3) {
     align-self: end;
+  }
+}
+
+@media (min-width: 632px) and (max-width: 1008px) {
+  .container {
+    width: var(--card-width-tablet);
+  }
+
+  .ratings {
+    align-items: center;
   }
 }
