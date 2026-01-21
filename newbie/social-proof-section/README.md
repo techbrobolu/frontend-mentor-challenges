@@ -10,79 +10,100 @@ This is a solution to the [Social proof section challenge on Frontend Mentor](ht
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+  # Frontend Mentor - Social proof section solution
 
-## Overview
+  This is a solution to the [Social proof section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-### The challenge
+  ## Table of contents
 
-Users should be able to:
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-- View the optimal layout for the section depending on their device's screen size
+  ## Overview
 
-### Screenshot
+  ### The challenge
 
-![](./screenshot.png)
+  Users should be able to:
 
-### Links
+  - View the optimal layout for the section depending on their device's screen size
 
-- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-social-proof-section-P9sMOLWeQX)
-- Live Site URL: [Github Pages Site](https://techbrobolu.github.io/frontend-mentor-challenges/newbie/social-proof-section/)
+  ### Screenshot
 
-## My process
+  ![](./screenshot.png)
 
-### Built with
+  ### Links
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Mobile-first workflow
-- Google Fonts (League Spartan)
+  - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-social-proof-section-P9sMOLWeQX)
+  - Live Site URL: [Github Pages Site](https://techbrobolu.github.io/frontend-mentor-challenges/newbie/social-proof-section/)
 
-### What I learned
+  ### How to view this project locally
 
-This project helped reinforce several key concepts in responsive web design:
+  1. Clone the repo: `git clone <repository-url>`
+  2. Open the project folder and open `index.html` in your browser (or use an editor Live Server).
 
-**1. CSS Custom Properties for Maintainability**
+  ## My process
 
-Using CSS variables made it easy to maintain consistent colors, fonts, and sizes throughout the project:
+  ### Built with
 
-```css
-:root {
-  --main-color: hsl(300, 43%, 22%);
-  --sec-color: hsl(333, 80%, 67%);
-  --ff: "League Spartan", sans-serif;
-  --text-heading: 700 2.5rem/0.85 var(--ff);
-}
-```
+  - Semantic HTML5 markup
+  - CSS custom properties
+  - Flexbox
+  - Mobile-first workflow
+  - Google Fonts (League Spartan)
 
-**2. Staggered Layout with Flexbox**
+  ### What I learned
 
-Creating the offset rating cards required careful use of flexbox properties and positioning to achieve the stepped visual effect shown in the design.
+  This project helped reinforce several key concepts in responsive web design:
 
-**3. Semantic HTML Structure**
+  **1. CSS Custom Properties for Maintainability**
 
-Organizing the content with proper semantic elements (`main`, `section`) improves accessibility and SEO while making the code more maintainable.
+  Using CSS variables made it easy to maintain consistent colors, fonts, and sizes throughout the project:
 
-### Continued development
+  ```css
+  :root {
+    --main-color: hsl(300, 43%, 22%);
+    --sec-color: hsl(333, 80%, 67%);
+    --ff: \"League Spartan\", sans-serif;
+    --text-heading: 700 2.5rem/0.85 var(--ff);
+  }
+  ```
 
-Areas I want to focus on in future projects:
+  **2. Staggered Layout with Flexbox**
 
-- **CSS Grid**: While this project used Flexbox effectively, I'd like to explore CSS Grid for more complex layouts
-- **Advanced Responsive Techniques**: Implementing more sophisticated breakpoints and fluid typography
-- **Accessibility**: Adding ARIA labels and ensuring keyboard navigation works smoothly
-- **Animation**: Adding subtle hover effects and transitions to enhance user experience
+  Creating the offset rating cards required careful use of flexbox properties and positioning to achieve the stepped visual effect shown in the design.
 
-### Useful resources
+  **3. Semantic HTML Structure**
 
-- [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This was invaluable for understanding flexbox properties and creating the staggered rating cards layout
-- [Google Fonts](https://fonts.google.com/) - Easy integration of the League Spartan font
+  Organizing the content with proper semantic elements (`main`, `section`) improves accessibility and SEO while making the code more maintainable.
 
-## Author
+  ### Continued development
 
-- Frontend Mentor - [Bolu👨🏾‍💻🚀](https://www.frontendmentor.io/profile/techbrobolu)
-- Github - [Bolu👨🏾‍💻🚀](https://github.com/techbrobolu)
-- X (Formerly Twitter) - [@techbrobolu](https://x.com/techbrobolu)
+  Areas I want to focus on in future projects:
+
+  - **CSS Grid**: While this project used Flexbox effectively, I'd like to explore CSS Grid for more complex layouts
+  - **Advanced Responsive Techniques**: Implementing more sophisticated breakpoints and fluid typography
+  - **Accessibility**: Adding ARIA labels and ensuring keyboard navigation works smoothly
+  - **Animation**: Adding subtle hover effects and transitions to enhance user experience
+
+  ### Useful resources
+
+  - [CSS Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This was invaluable for understanding flexbox properties and creating the staggered rating cards layout
+  - [Google Fonts](https://fonts.google.com/) - Easy integration of the League Spartan font
+
+  ### License
+
+  This project is available under the MIT License. See the repository for details.
+
+  ## Author
+
+  - Frontend Mentor - [Bolu👨🏾‍💻🚀](https://www.frontendmentor.io/profile/techbrobolu)
+  - Github - [Bolu👨🏾‍💻🚀](https://github.com/techbrobolu)
+  - X (Formerly Twitter) - [@techbrobolu](https://x.com/techbrobolu)
